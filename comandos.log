@@ -1,0 +1,18 @@
+Crear topic
+docker exec -it kafka bash
+kafka-topics --bootstrap-server kafka:9092 --create --topic develop
+
+Producer
+
+docker exec -it kafka bash
+
+kafka-console-producer --bootstrap-server kafka:9092 --topic develop
+
+Consumer
+docker exec -it kafka bash
+
+kafka-console-consumer --bootstrap-server kafka:9092 --topic develop --from-beginning
+
+docker-compose up -d
+
+docker-compose down
